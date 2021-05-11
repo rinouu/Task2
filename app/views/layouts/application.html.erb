@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Task2</title>
+    <title>Task01</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <% if flash[:notice] %>
+      <div id="flash"><%= notice %></div>
+    <% end %>
+    <div class="container">
+        <%= yield %>
+    </div>
   </body>
 </html>
