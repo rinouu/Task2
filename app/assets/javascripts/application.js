@@ -14,6 +14,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-/*setTimeout(function(){
+setTimeout(function(){
     document.getElementById('flash').className += ' hidden';
-	}, 3000);*/
+	}, 3000);
