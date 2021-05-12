@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'posts#index'
   get 'sessions/new'
   	resources :posts do
 	    collection do
