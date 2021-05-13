@@ -8,16 +8,16 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to posts_path()
-      # If login is successful
+    # If login is successful
     else
       flash.now[:danger] = 'I failed to login'
       render :new
     end
   end
 
-	def destroy
-    	session.delete(:user_id)
-	    flash[:notice] = 'Deconnected'
-    	redirect_to new_session_path
-  	end
+  def destroy
+    session.delete(:user_id)
+    flash[:notice] = 'Deconnected'
+  	redirect_to new_session_path
+	end
 end
