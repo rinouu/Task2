@@ -4,8 +4,8 @@
 	<hr>
 	<p>Content: <%= @post.content %></p>
 	<div>
-	<%unless @post.image.blank? %>
-		<%= image_tag @post.image.url %>
-	<%end%>
+		<%unless @post.image.blank? %>
+			<%= image_tag @post.image.url %>
+		<%end%>
 	</div>
 </div>
