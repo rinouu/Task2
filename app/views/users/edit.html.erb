@@ -1,0 +1,18 @@
+<%= form_with(model: @user, local: true ) do |form| %>
+  <br>
+  <div class="user">
+    <p>What are news?</p>
+    <div class="form">
+        <br>
+        <%= form.text_field :name, placeholder: "Name..." %> 
+        <br>
+        <br>
+        <%= form.email_field :email, placeholder: "Email..." %>
+        <br>
+        <%= form.file_field :profil %>
+        <%= form.hidden_field :profil_cache %>
+    </div>
+    <br>
+    <%= form.submit "Update", class: "submit" %>
+  </div>
+<% end %>

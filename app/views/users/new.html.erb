@@ -22,9 +22,11 @@
     <%= f.password_field :password, placeholder: "Password..." %>
     <br> 
     <br> 
-    <%= f.password_field :password_confirmation, placeholder: "Password. confirmation..." %> 
+    <%= f.password_field :password_confirmation, placeholder: "Password confirmation..." %> 
     <br>
     <br>
+    <%= f.file_field :profil %>
+    <%= f.hidden_field :profil_cache %>
     <%= f.submit "Create my account", class: "submit" %> 
   <% end %>
 </div>

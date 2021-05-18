@@ -1,10 +1,14 @@
+
 <br>
 <% @posts.each do |post| %>
   <table> 
     <div class="table">
       <tr>
         <th colspan="4">
-          <span><%= image_tag("user_icon.jpg", style: "height:30px;width:30px;") %></span>
+          <% unless post.user.profil.blank? %>
+            <span class="img"> <%= image_tag post.user.profil.url %></div>
+          <%end%>
+
           <span>Posted by <%= post.user.name %> at <%= post.updated_at.to_date %></span>
           <hr>
         </th>

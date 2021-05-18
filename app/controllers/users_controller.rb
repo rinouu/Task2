@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :login_required, only: [:new, :create]
+  skip_before_action :login_required, only: [:new, :create, :edit, :update]
+
   def new
   	@user = User.new
   end
@@ -13,6 +14,19 @@ class UsersController < ApplicationController
   	end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+        redirect_to user_path(@user.id), notice: "Profil edited!"
+    else
+        render :edit
+    end
+  end
+  
   def show
   	@user = User.find(params[:id])
   end
@@ -21,6 +35,14 @@ class UsersController < ApplicationController
 
   def user_params
   	params.require(:user).permit(:name, :email, :password,
-                              	 :password_confirmation)
+                              	 :password_confirmation, :profil, :profil_cache)
+  end
+
+  def user_profil_params
+    params.require(:user).permit(:name, :email,:profil, :profil_cache)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
