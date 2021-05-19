@@ -1,0 +1,32 @@
+
+<br>
+<% @favorites.each do |favorite| %>
+  <table> 
+    <div class="table">
+      <tr>
+        <th colspan="4">
+          <% unless favorite.post.user.profil.blank? %>
+            <span class="img"> <%= image_tag favorite.post.user.profil.url %></div>
+          <%end%>
+
+          <span>Posted by <%= favorite.post.user.name %> at <%= favorite.post.updated_at.to_date %></span>
+          <hr>
+        </th>
+      </tr>
+   
+      <tr>
+        <td>
+          <p class="content"><%= favorite.post.content %></p>
+          <% unless favorite.post.image.blank? %>
+            <div class="img"> <%= image_tag favorite.post.image.url %></div>
+          <%end%>
+          <hr>
+          <div class="btn_block">
+            <div class="bloc"><i class="fas fa-info-circle"></i><%= link_to 'Show more!', post_path(favorite.post.id), class: "bloc" %></div>
+          </div>
+        </td>
+      </tr>
+    </div>
+  </table>
+  <br>
+<% end %>
