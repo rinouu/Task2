@@ -13,6 +13,10 @@ class PostsController < ApplicationController
 		if params[:back]
 	  		render :new
 		else
+		    if @post.image.present?
+		    	@picture = current_user
+  				PictureMailer.picture_mail(@picture).deliver  ##Addendum
+			end
 	  		if @post.save
 	    		redirect_to posts_path, notice: "Post created!"
 	  		else
