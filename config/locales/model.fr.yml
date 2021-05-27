@@ -1,0 +1,18 @@
+fr:
+activerecord:
+models:
+blog: Post
+user: User
+attributes:
+blog:
+title: Titre
+content: Contenu
+user:
+post: Hello
+title: Titre
+name: Nom
+email: Email
+current_password: Mot_de_passe_actuel
+password: Mot_de_passe
+password_confirmation: Mot_de_passe_confirmé
+remember_me: Se_souvenir
