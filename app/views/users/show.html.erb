@@ -1,7 +1,7 @@
 <h1>Profil de <%= @user.name %></h1>
 <button> 
 	<% unless @user.profil.blank? %>
-        <span class="img"> <%= image_tag @user.profil.url %></div>
-    <%end%>
+		<span class="img"> <%= image_tag @user.profil.url %></div>
+	<%end%>
 </button>
 <p>E-mail address: <%= @user.email %></p>

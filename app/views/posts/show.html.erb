@@ -9,11 +9,11 @@
 		<%end%>
 	</div>
 	<% unless @post.user_id == current_user.id %>
-	  <% if @favorite.present? %>
-	    <%= link_to 'Remove favorite', favorite_path(id: @favorite.id), method: :delete %>
-	  <% else %>
-	  	<%= link_to 'Favorite', favorites_path(post_id: @post.id), method: :post %>
-	  <% end %>
+		<% if @favorite.present? %>
+			<%= link_to 'Remove favorite', favorite_path(id: @favorite.id), method: :delete %>
+		<% else %>
+			<%= link_to 'Favorite', favorites_path(post_id: @post.id), method: :post %>
+		<% end %>
 	<% end %>
 </div>
 
